@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    //创建组件
+    var Person=React.createClass({
+        render:function () {
+            return(
+                //只能出现一个顶层标签
+                <div>
+                    <h1>hello</h1>
+                    <h2>react</h2>
+                </div>
+            )
+        }
+    });
+    //插入组件，ReactDOM.render()不仅能输出html结构，也能输出组件
+    ReactDOM.render(
+        <Person/>,//可以写单标签也能写双标签
+        document.getElementById('example')
+    );
+
+
+</script>
+</body>
+</html>

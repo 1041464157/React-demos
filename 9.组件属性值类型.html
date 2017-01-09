@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var person={
+            name:'小王',
+            age:23,
+            sex:'男'
+        };
+        var Person=React.createClass({
+            render:function () {
+                return(
+                    <div>
+                        <li>{this.props.name}</li>
+                        <li>{this.props.age}</li>
+                        <li>{this.props.sex}</li>
+                    </div>
+                )
+            },
+            propTypes:{
+                name:React.PropTypes.string,
+                age:React.PropTypes.number,
+                sex:React.PropTypes.string
+            }
+        });
+        ReactDOM.render(
+            <Person {...person}/>,
+            document.getElementById('example')
+        )
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/babel">
+    var Status=React.createClass({
+        getInitialState:function () {
+            return(
+                {
+                    on:true,
+                    mes:'这是true的状态'
+                }
+            )
+        },
+        render:function () {
+            var style={
+                color:this.state.on?'green':'red',
+                fontSize:this.state.on?'20px':'10px'
+            };
+            return(
+                <h2 style={style}>{this.state.mes}</h2>
+            )
+        }
+    });
+    var conponent=ReactDOM.render(
+        <Status/>,
+        document.getElementById('box')
+    );
+//    console.log(co/ponent);
+    conponent.setState({
+        on:false,
+        mes:'这是false的状态'
+    })
+</script>
+</body>
+</html>

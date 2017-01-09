@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+    <style>
+        #box{
+            width: 320px;
+            height:150px;
+            border:5px solid #000;
+        }
+        .left{
+            width: 100px;
+            height:150px;
+            border:1px solid #000;
+            float:left;
+            color:#fff;
+        }
+        .right{
+            width: 200px;
+            height:150px;
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <script type="text/babel">
+        var Box=React.createClass({
+            render:function () {
+                return(
+                        <div>
+                            <div className="left"></div>
+                            <Right/>
+                        </div>
+                )
+            }
+        });
+        var Right=React.createClass({
+            render:function () {
+                return(
+                        <div className="right">
+                            <H1 cont='这是一个大标题'/>
+                            <H2 cont='这是一个二级标题'/>
+                        </div>
+                )
+            }
+        });
+        var H1=React.createClass({
+            render:function () {
+                return(
+                        <h1>{this.props.cont}</h1>
+                )
+            }
+        });
+        var H2=React.createClass({
+            render:function () {
+                return(
+                        <h2>{this.props.cont}</h2>
+                )
+            }
+        });
+        ReactDOM.render(
+            <Box/>,
+            document.getElementById('box')
+        )
+    </script>
+</body>
+</html>

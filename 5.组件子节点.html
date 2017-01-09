@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var Person=React.createClass({
+        render:function () {
+            return(
+                <ul>
+                    {
+//                        console.log(this.props.children)
+                        React.Children.map(this.props.children,function (child) {
+                            return <li>{child}</li>
+                        })
+                    }
+                </ul>
+            )
+        }
+    });
+    ReactDOM.render(
+        <Person>
+            <span>red</span>
+            <span>yellow</span>
+        </Person>,
+        document.getElementById('example')
+    );
+
+</script>
+</body>
+</html>

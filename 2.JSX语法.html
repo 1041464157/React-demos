@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var color=['red','blue','pink'];
+    ReactDOM.render(
+         <ul>
+         {
+             color.map(function(value,index){
+             return <li>这是第{index+1}值为{value}</li>
+             })
+         }
+         </ul>,
+     document.getElementById('example')
+     )
+    /*var arr=[
+     <li>kaivon</li>,
+     <li>peng</li>,
+     <li>peter</li>
+     ];
+     ReactDOM.render(
+     <ul>
+     {arr}
+     </ul>,
+     document.getElementById('example')
+     )*/
+</script>
+</body>
+</html>

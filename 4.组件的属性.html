@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var person={
+        name:'小王',
+        age:22
+    };
+    var Person=React.createClass({
+        render:function () {
+            return(
+                <div>
+                    <h1>{this.props.name}</h1>
+                    <h2>{this.props.age}</h2>
+                </div>
+            )
+        }
+    });
+    ReactDOM.render(
+        //数据是对象形式的话，可以用ES6里的扩展运算符
+        <Person {...person}/>,
+        document.getElementById('example')
+    )
+
+</script>
+</body>
+</html>
