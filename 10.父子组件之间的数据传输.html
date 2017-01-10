@@ -8,6 +8,14 @@
     <script src="js/browser.min.js"></script>
 </head>
 <body>
+<!--
+     父子组件之间的数据传输
+         父组件通过this.state往子组件传数据
+         子组件通过this.props接受父组件数据
+         设置默认属性props
+         1.设置默认属性getDefaultProps它需要放在创建组件的函数里；
+         2.当调用这个组件的时候，如果没有传属性，就会用它的数据，可以避免报错。
+-->
 <div id="example"></div>
 <script type="text/babel">
    var Parent=React.createClass({

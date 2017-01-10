@@ -7,7 +7,22 @@
     <script src="js/browser.min.js"></script>
   </head>
   <body>
-    <div id="example"></div>
+  <!--
+     render方法
+        1.需要引入三个js文件
+            react.js    核心代码
+            react-dom.js    渲染DOM
+            browser.min.js  解析JSX语法
+        2.script标签的type类型一定要是text/babel
+          (browser.min.js看到type为text/babel的标签后，把里面的内容解析成正常的js语法）
+        3.代码依然要用/**/或//注释，不能用html的注释，不然会报错
+          ReactDOM.render()
+          React的基本方法，将React的模版语法转换成真正的HTML,并插入到指定的DOM节点里，再渲染它。
+          参数1：创建的元素（放组件的函数）
+          参数2：要添加给谁
+          参数3：渲染成功后的回调函数
+  -->
+  <div id="example"></div>
     <script type="text/babel">
         ReactDOM.render(
                 <h1>kaivon</h1>,

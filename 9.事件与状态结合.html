@@ -8,6 +8,11 @@
     <script src="js/browser.min.js"></script>
 </head>
 <body>
+<!--
+     事件与状态结合
+         1.事件必须是驼峰的写法，事件处理函数必须放在组件里，作为它的一个属性
+         2.this.setState用于修改状态值，只要它的值一改变React就会自动调用render方法，渲染DOM。
+-->
 <div id="example"></div>
 <script type="text/babel">
     var State=React.createClass({

@@ -8,6 +8,11 @@
     <script src="js/browser.min.js"></script>
 </head>
 <body>
+<!--
+    验证组件属性值的类型
+       组件的属性可以接受任意值，字符串、对象、函数等等，我们需要一种机制，去验证别人提供的参数是否符合要求。
+       propTypes
+-->
     <div id="example"></div>
     <script type="text/babel">
         var person={
@@ -26,6 +31,7 @@
                 )
             },
             propTypes:{
+            //设置默认属性,输入其它类型数据也不会报错，但会弹出警告
                 name:React.PropTypes.string,
                 age:React.PropTypes.number,
                 sex:React.PropTypes.string

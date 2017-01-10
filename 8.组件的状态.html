@@ -8,6 +8,16 @@
     <script src="js/browser.min.js"></script>
 </head>
 <body>
+<!--
+    组件的状态
+        组件免不了要与用户互动，React的一大创新，就是将组件看成一个状态机，一开始有一个初始的状态，然后用户互动，导致状态变化，从而触发重新渲染UI。
+           getInitialState()   获取组件的状态
+                 1.它必须写在创建组件的函数里
+                 2.它必须有一个返回值是null或者对象
+           state     获取状态对应的属性值（getInitialState方法的返回值）
+           setState()   设置组件的状态
+                    它是组件身上的方法，组件是放在ReactDOM.render的返回值
+-->
 <div id="box"></div>
 <script type="text/babel">
     var Status=React.createClass({
@@ -33,7 +43,7 @@
         <Status/>,
         document.getElementById('box')
     );
-//    console.log(co/ponent);
+//    console.log(conponent);
     conponent.setState({
         on:false,
         mes:'这是false的状态'

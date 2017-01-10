@@ -8,6 +8,15 @@
     <script src="js/browser.min.js"></script>
 </head>
 <body>
+<!--
+    组件子节点
+        props对象的属性与组件的属性是一一对应的，但有一个例外，props.children属性（组件的所有子节点）它的值不一定是一一对应的，
+        props.children的值有三种类型
+             1.undefined  当前组件没有子节点
+             2.object        当前组件只有一个子节点
+             3.array          当前组件有多个子节点
+       可以用React.Children方法来遍历子节点，不用担心它的类型是什么，都可以遍历出来
+-->
 <div id="example"></div>
 <script type="text/babel">
     var Person=React.createClass({
