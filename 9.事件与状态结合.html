@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var State=React.createClass({
+        getInitialState:function () {
+            return({
+                clickNum:0
+            })
+        },
+        render:function () {
+            return(
+                <div>
+                    <input type="button" value="点我" onClick={this.ClickFn}/>
+                    <p>{this.state.clickNum}</p>
+                </div>
+
+            )
+        },
+        ClickFn:function () {
+            this.setState({
+                clickNum:this.state.clickNum+1
+            });
+        }
+    })
+    ReactDOM.render(
+        <State/>,
+        document.getElementById('example')
+    )
+</script>
+</body>
+</html>

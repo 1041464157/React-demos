@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+   var Parent=React.createClass({
+       getInitialState:function () {
+           return({
+                   mes:['星期一','星期二','星期三']
+           })
+       },
+       render:function () {
+           return(
+               <div>
+                 <h1 onClick={this.ClickFn}>日期</h1>
+                 <Child cont={this.state.mes}/>
+               </div>
+           )
+       },
+       ClickFn:function () {
+           this.state.mes.shift();
+           this.setState({
+               mes:this.state.mes
+           });
+       }
+
+   });
+    var Child=React.createClass({
+        render:function () {
+            return(
+                <div>{
+                    this.props.cont.map(function (value,index) {
+                        return <p key={index}>{value}</p>
+                    })
+                }</div>
+            )
+        },
+        getDefaultProps:function () {
+            return({cont:['没有值时的默认值']})
+        }
+    });
+    ReactDOM.render(
+        <Parent/>,
+        document.getElementById('example')
+    )
+</script>
+</body>
+</html>

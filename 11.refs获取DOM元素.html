@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var Input=React.createClass({
+        render:function () {
+            return(
+                <div>
+                    <input type="text" ref="inp"/>
+                    <button onClick={this.onFocus}>点我获取焦点</button>
+                </div>
+            )
+        },
+        onFocus:function () {
+             this.refs.inp.focus();
+        }
+    });
+    ReactDOM.render(<Input/>,document.getElementById('example'));
+</script>
+</body>
+</html>
